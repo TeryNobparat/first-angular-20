@@ -13,33 +13,41 @@
             class="border border-solid border-gray-500 rounded-md h-10 px-2"
             type="text"
             placeholder="First Name"
+            required
+            [(ngModel)]="fname"
           />
           <input
             class="border border-solid border-gray-500 rounded-md h-10 px-2"
             type="text"
             placeholder="Last Name"
+            required
+            [(ngModel)]="lname"
           />
         </div>
         <input
           type="email"
           placeholder="Email"
           class="border border-solid border-gray-500 rounded-md h-10 px-2"
-          checked
+          required
+          [(ngModel)]="email"
         />
         <input
           type="password"
           placeholder="Password"
           class="border border-solid border-gray-500 rounded-md h-10 px-2"
+          [(ngModel)]="password"
         />
         <input
           type="password"
           placeholder="Confirm Password"
           class="border border-solid border-gray-500 rounded-md h-10 px-2"
+          [(ngModel)]="confirmPassword"
+          required
         />
         <a routerLink="/sign-in"> SignIn</a>
         <button
+          (click)="onSubmit()"
           class="mt-4 w-full rounded bg-green-500 px-4 py-2 text-white hover:bg-blue-600"
-          type="submit"
         >
           Register Now
         </button>
