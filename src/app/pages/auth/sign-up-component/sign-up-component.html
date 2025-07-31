@@ -1,0 +1,49 @@
+<div class="mx-auto max-w-md overflow-hidden rounded-xl bg-white shadow-md">
+  <div class="md:flex">
+    <div class="p-8">
+      <div class="mb-4">
+        <div class="text-2xl text-center">Register</div>
+        <span class="text-sm text-center"
+          >Create your account. It's free and only takes a minute.</span
+        >
+      </div>
+      <form class="grid grid-row-3 gap-4" action="">
+        <div class="grid grid-cols-2 gap-4">
+          <input
+            class="border border-solid border-gray-500 rounded-md h-10 px-2"
+            type="text"
+            placeholder="First Name"
+          />
+          <input
+            class="border border-solid border-gray-500 rounded-md h-10 px-2"
+            type="text"
+            placeholder="Last Name"
+          />
+        </div>
+        <input
+          type="email"
+          placeholder="Email"
+          class="border border-solid border-gray-500 rounded-md h-10 px-2"
+          checked
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          class="border border-solid border-gray-500 rounded-md h-10 px-2"
+        />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          class="border border-solid border-gray-500 rounded-md h-10 px-2"
+        />
+        <a routerLink="/sign-in"> SignIn</a>
+        <button
+          class="mt-4 w-full rounded bg-green-500 px-4 py-2 text-white hover:bg-blue-600"
+          type="submit"
+        >
+          Register Now
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

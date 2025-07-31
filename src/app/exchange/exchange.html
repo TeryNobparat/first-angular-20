@@ -1,0 +1,85 @@
+<div class="min-h-screen flex flex-col pt-16 bg-gray-50">
+  <main class="flex-grow flex justify-center items-start">
+    <div
+      class="w-full max-w-md mx-auto rounded-xl bg-white shadow-md overflow-hidden"
+    >
+      <div class="p-6 space-y-6">
+        <div class="flex justify-between items-center mb-4">
+          <div>
+            <a routerLink="/home">Go Home</a>
+          </div>
+          <div class="text-center text-2xl font-semibold text-gray-800">
+            Exchange Chips
+          </div>
+          <div>
+            <a routerLink="/exchange"></a>
+          </div>
+        </div>
+        <hr />
+        <table class="min-w-full bg-white">
+          <thead class="bg-gray-200">
+            <tr>
+              <th>Color Chip</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>White Chip</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>Pink Chip</td>
+              <td>300</td>
+            </tr>
+            <tr>
+              <td>Red Chip</td>
+              <td>500</td>
+            </tr>
+            <tr>
+              <td>Blue Chip</td>
+              <td>1000</td>
+            </tr>
+            <tr>
+              <td>Green Chip</td>
+              <td>5000</td>
+            </tr>
+            <tr>
+              <td>Black Chip</td>
+              <td>10000</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+        <div class="grid grid-row-3 gap-4">
+          <input
+            id="exchange_input"
+            type="number"
+            placeholder="Enter amount to exchange..."
+            class="flex-1 border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            min="100"
+            value="{{ inputAmount }}"
+            [(ngModel)]="inputAmount"
+          />
+          <hr />
+          <div *ngIf="inputAmount > 0" class="mt-4">
+            <h3 class="font-semibold">สรุปจำนวนชิป:</h3>
+            <div class="gap-4" *ngFor="let color of chipColors()">
+              <button [ngClass]="cssChips[color]">
+                {{ selectedChips[color] }}
+              </button>
+            </div>
+          </div>
+          <div>
+            <button
+              (click)="onExchange()"
+              class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+            >
+              Exchange
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
